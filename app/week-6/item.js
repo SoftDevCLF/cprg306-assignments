@@ -1,18 +1,18 @@
 export default function Item({ name, quantity, category }) {
   return (
-    <ItemLayout>
+    <ItemCard>
       <ul>
         <li>{name}</li>
         <li>Quantity: {quantity}</li>
         <li className="capitalize">Category: {category}</li>
       </ul>
-    </ItemLayout>
+    </ItemCard>
   );
 }
 
-function ItemLayout({ children }) {
+function ItemCard({ children }) {
   return (
-    <div className="w-64 mx-auto border p-2 rounded-lg shadow-md flex justify-start mb-2">
+    <div className="w-72 mx-auto border p-2 rounded-lg shadow-md flex justify-start mb-2">
       <div className="pr-4 border-amber-600 border-r-2">
         <input type="checkbox" />
       </div>

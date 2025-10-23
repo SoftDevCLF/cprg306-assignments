@@ -1,90 +1,59 @@
+"use client";
 import Item from "./item";
+import { useState } from "react";
+import items from "./items.json";
+
 export default function ItemList() {
-  const item1 = {
-    name: "milk, 4 L 🥛",
-    quantity: 1,
-    category: "dairy",
-  };
+  const [sortBy, setSortBy] = useState("name");
 
-  const item2 = {
-    name: "bread 🍞",
-    quantity: 2,
-    category: "bakery",
-  };
+  const sortItems = [...items].sort((item1, item2) => {
+    if (sortBy === "name") {
+      if (item1.name < item2.name) {
+        return -1;
+      } else if (item1.name > item2.name) {
+        return 1;
+      } else {
+        return 0;
+      }
+    } else if (sortBy === "category") {
+      if (item1.category < item2.category) {
+        return -1;
+      } else if (item1.category > item2.category) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+  });
 
-  const item3 = {
-    name: "eggs, dozen 🥚",
-    quantity: 2,
-    category: "dairy",
-  };
-
-  const item4 = {
-    name: "bananas 🍌",
-    quantity: 6,
-    category: "produce",
-  };
-
-  const item5 = {
-    name: "broccoli 🥦",
-    quantity: 3,
-    category: "produce",
-  };
-
-  const item6 = {
-    name: "chicken breasts, 1 kg 🍗",
-    quantity: 1,
-    category: "meat",
-  };
-
-  const item7 = {
-    name: "pasta sauce 🍝",
-    quantity: 3,
-    category: "canned goods",
-  };
-
-  const item8 = {
-    name: "spaghetti, 454 g 🍝",
-    quantity: 2,
-    category: "dry goods",
-  };
-
-  const item9 = {
-    name: "toilet paper, 12 pack 🧻",
-    quantity: 1,
-    category: "household",
-  };
-
-  const item10 = {
-    name: "paper towels, 6 pack",
-    quantity: 1,
-    category: "household",
-  };
-
-  const item11 = {
-    name: "dish soap 🍽️",
-    quantity: 1,
-    category: "household",
-  };
-
-  const item12 = {
-    name: "hand soap 🧼",
-    quantity: 4,
-    category: "household",
-  };
   return (
     <div>
-      <Item {...item1} />
-      <Item {...item2} />
-      <Item {...item3} />
-      <Item {...item4} />
-      <Item {...item5} />
-      <Item {...item6} />
-      <Item {...item7} />
-      <Item {...item8} />
-      <Item {...item9} />
-      <Item {...item10} />
-      <Item {...item11} />
-      <Item {...item12} />
+      <div className="flex gap-2 mb-2 justify-center-safe items-center">
+        <span className="text-sm text-gray-600">Sort by:</span>
+        <button
+          className={`px-3 py-1 rounded text-white text-sm transition-colors ${
+            sortBy === "name"
+              ? "bg-blue-400 hover:bg-blue-600"
+              : "bg-green-400 hover:bg-green-600"
+          }`}
+          onClick={() => setSortBy("name")}
+        >
+          Name
+        </button>
+        <button
+          className={`px-3 py-1 rounded text-white text-sm transition-colors ${
+            sortBy === "category"
+              ? "bg-blue-400 hover:bg-blue-600"
+              : "bg-green-400 hover:bg-green-600"
+          }`}
+          onClick={() => setSortBy("category")}
+        >
+          Category
+        </button>
+      </div>
+      {sortItems.map((item) => (
+        <Item key={item.id} {...item} />
+      ))}
     </div>
   );
 }
