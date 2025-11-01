@@ -28,6 +28,9 @@ export default function Home() {
           <li className="text-blue-400 hover:text-blue-700 mt-3 hover:underline">
             <Link href="/week-7">Go to Week 7</Link>
           </li>
+          <li className="text-blue-400 hover:text-blue-700 mt-3 hover:underline">
+            <Link href="/week-8">Go to Week 8</Link>
+          </li>
         </ul>
       </section>
     </main>
