@@ -27,7 +27,7 @@ export default function AddNewItem({ onAddItem }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-72 mx-auto bg-white shadow-md border border-gray-300 rounded p-4"
+      className="w-72 bg-white shadow-md border border-gray-300 rounded p-4 justify-self-end-safe mb-6"
     >
       <label htmlFor="name">Item Name</label>
       <input
