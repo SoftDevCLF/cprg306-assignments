@@ -2,7 +2,7 @@
 import Item from "./item";
 import { useState } from "react";
 
-export default function ItemList({ items }) {
+export default function ItemList({ items, onItemSelect }) {
   const [sortBy, setSortBy] = useState("name");
 
   const sortItems = [...items].sort((item1, item2) => {
@@ -27,8 +27,8 @@ export default function ItemList({ items }) {
   });
 
   return (
-    <div>
-      <div className="flex gap-2 mb-2 justify-center-safe items-center w-72 mx-auto">
+    <div className="justify-self-end-safe">
+      <div className="flex gap-2 mb-2 items-center w-72">
         <span className="text-sm text-gray-600 w-full">Sort by:</span>
         <button
           className={`px-3 py-1 rounded w-full text-white text-sm transition-colors ${
@@ -52,7 +52,11 @@ export default function ItemList({ items }) {
         </button>
       </div>
       {sortItems.map((item) => (
-        <Item key={item.id} {...item} />
+        <Item
+          key={item.id}
+          {...item}
+          onSelect={() => onItemSelect(item.name)}
+        />
       ))}
     </div>
   );
