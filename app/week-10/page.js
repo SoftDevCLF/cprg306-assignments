@@ -20,7 +20,7 @@ export default function LandingPage() {
     <main className="bg-gray-5 p-4 max-w-5xl mx-auto">
       <div className="text-center">
         {!user ? (
-          <div className="text-center border border-gray-300 m-10 p-5 rounded-lg max-w-xs mx-auto dark:bg-gray-800 dark:border-gray-800">
+          <div className="text-center border border-gray-300 m-10 p-5 rounded-lg max-w-xs mx-auto dark:bg-gray-800 dark:border-gray-800 shadow-md">
             <h1> Login with GitHub </h1>
             <div>
               <Image
