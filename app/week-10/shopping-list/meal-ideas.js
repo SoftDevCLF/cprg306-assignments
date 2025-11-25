@@ -39,16 +39,16 @@ export default function MealIdeas({ ingredient }) {
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {meals.map((meal) => (
             <li
-              className="border rounded p-2 text-start dark:bg-gray-800 dark:border-gray-800"
+              className="border border-gray-300  rounded p-2 shadow-md dark:bg-gray-800 dark:border-gray-800"
               key={meal.idMeal}
             >
-              <div className="flex flex-col items-center gap-2 text-center">
+              <div className="flex flex-col items-center gap-2">
                 <img
                   src={meal.strMealThumb}
                   alt={meal.strMeal}
-                  className="h-15 object-cover rounded"
+                  className="w-full h-40 object-cover rounded"
                 />
-                <p className="font-medium">{meal.strMeal}</p>
+                <p className="font-medium text-center">{meal.strMeal}</p>
               </div>
             </li>
           ))}
