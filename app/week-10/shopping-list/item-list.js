@@ -21,12 +21,14 @@ export default function ItemList({ items, onItemSelect }) {
   return (
     <div className="justify-self-end-safe">
       <div className="flex gap-2 mb-2 items-center w-72">
-        <span className="text-sm text-gray-600 w-full">Sort by:</span>
+        <span className="text-sm text-gray-600 w-full dark:text-gray-300">
+          Sort by:
+        </span>
         <button
           className={`px-3 py-1 rounded w-full text-white text-sm transition-colors ${
             sortBy === "name"
-              ? "bg-blue-400 hover:bg-blue-600"
-              : "bg-gray-300 hover:bg-gray-400 text-black"
+              ? "bg-blue-400 hover:bg-blue-600 dark:bg-purple-600 dark:hover:bg-purple-800 "
+              : "bg-gray-300 hover:bg-gray-400 text-black dark:bg-gray-500 dark:text-white dark:hover:bg-gray-600"
           }`}
           onClick={() => setSortBy("name")}
         >
@@ -35,8 +37,8 @@ export default function ItemList({ items, onItemSelect }) {
         <button
           className={`px-3 py-1 rounded w-full text-white text-sm transition-colors ${
             sortBy === "category"
-              ? "bg-blue-400 hover:bg-blue-600"
-              : "bg-gray-300 hover:bg-gray-400 text-black"
+              ? "bg-blue-400 hover:bg-blue-600 dark:bg-purple-600 dark:hover:bg-purple-800"
+              : "bg-gray-300 hover:bg-gray-400 text-black dark:bg-gray-500 dark:text-white dark:hover:bg-gray-600"
           }`}
           onClick={() => setSortBy("category")}
         >
