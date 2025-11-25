@@ -32,7 +32,7 @@ export default function NewItem({ onAddItem }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-72 bg-white shadow-md border border-gray-300 rounded p-4 justify-self-end-safe mb-6 dark:bg-gray-800 dark:border-gray-800"
+      className="w-full bg-white shadow-md border border-gray-300 rounded p-4 justify-self-end-safe mb-6 dark:bg-gray-800 dark:border-gray-800"
     >
       <label htmlFor="name">Item Name</label>
       <input
@@ -57,14 +57,14 @@ export default function NewItem({ onAddItem }) {
           <button
             type="button"
             onClick={decrement}
-            className=" bg-gray-200 hover:bg-gray-300 text-white font-sans rounded px-4 py-2 dark:bg-gray-500 dark:hover:bg-gray-600"
+            className=" bg-gray-400 hover:bg-gray-500 text-white font-sans rounded px-4 py-2 font-semibold dark:bg-gray-500 dark:hover:bg-gray-600"
           >
             -
           </button>
           <button
             type="button"
             onClick={increment}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-sans rounded px-4 py-2 dark:bg-purple-600 dark:hover:bg-purple-800"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-sans rounded px-4 py-2 font-semibold dark:bg-purple-600 dark:hover:bg-purple-800"
           >
             +
           </button>
@@ -98,7 +98,7 @@ export default function NewItem({ onAddItem }) {
         <input
           type="submit"
           value="Add Item"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-sans py-2 px-4 rounded justify-center-safe w-full dark:bg-purple-600 dark:hover:bg-purple-800 cursor-pointer"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-sans py-2 px-4 font-bold rounded justify-center-safe w-full dark:bg-purple-600 dark:hover:bg-purple-800 cursor-pointer"
         />
       </div>
     </form>
