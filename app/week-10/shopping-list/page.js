@@ -9,7 +9,7 @@ import LandingPage from "../page";
 import { getItems, addItem } from "../_services/shopping-list-service";
 
 export default function Page() {
-  const { user } = useUserAuth();
+  const { user, firebaseSignOut } = useUserAuth();
   const [items, setItems] = useState([]);
   const [selectedItemName, setSelectedItemName] = useState("");
 
@@ -55,12 +55,27 @@ export default function Page() {
   if (!user) {
     return <LandingPage />;
   }
+  const handleLogOut = async () => {
+    await firebaseSignOut();
+  };
 
   return (
     <main className="bg-gray-5 p-4 max-w-5xl mx-auto">
-      <h1 className="font-bold text-2xl text-center mb-6">
-        Shopping List + Meal Ideas
-      </h1>
+      <div className="flex items-center justify-between mb-6 px-4 md:px-0">
+        <div className="flex-1"></div>
+        <h1 className="text-2xl font-bold text-center flex-1">
+          Shopping List + Meal Ideas
+        </h1>
+        <div className="flex-1 flex justify-end">
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer dark:bg-purple-600 dark:hover:bg-purple-800"
+            onClick={handleLogOut}
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+
       <div className="grid md:grid-cols-2 gap-6">
         <div>
           <NewItem onAddItem={handleAddItem} />
