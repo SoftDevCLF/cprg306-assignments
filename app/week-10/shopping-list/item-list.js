@@ -19,26 +19,26 @@ export default function ItemList({ items, onItemSelect }) {
   });
 
   return (
-    <div className="justify-self-end-safe">
-      <div className="flex gap-2 mb-2 items-center w-72">
+    <div>
+      <div className="flex gap-2 mb-2 items-center w-full">
         <span className="text-sm text-gray-600 w-full dark:text-gray-300">
           Sort by:
         </span>
         <button
-          className={`px-3 py-1 rounded w-full text-white text-sm transition-colors ${
+          className={`px-3 py-1 rounded w-full text-white text-sm transition-colors font-semibold ${
             sortBy === "name"
-              ? "bg-blue-400 hover:bg-blue-600 dark:bg-purple-600 dark:hover:bg-purple-800 "
-              : "bg-gray-300 hover:bg-gray-400 text-black dark:bg-gray-500 dark:text-white dark:hover:bg-gray-600"
+              ? "bg-blue-500 hover:bg-blue-700 dark:bg-purple-600 dark:hover:bg-purple-800 "
+              : "bg-gray-400 hover:bg-gray-500 text-black dark:bg-gray-500 dark:text-white dark:hover:bg-gray-600"
           }`}
           onClick={() => setSortBy("name")}
         >
           Name
         </button>
         <button
-          className={`px-3 py-1 rounded w-full text-white text-sm transition-colors ${
+          className={`px-3 py-1 rounded w-full text-white text-sm transition-colors font-semibold ${
             sortBy === "category"
-              ? "bg-blue-400 hover:bg-blue-600 dark:bg-purple-600 dark:hover:bg-purple-800"
-              : "bg-gray-300 hover:bg-gray-400 text-black dark:bg-gray-500 dark:text-white dark:hover:bg-gray-600"
+              ? "bg-blue-500 hover:bg-blue-700 dark:bg-purple-600 dark:hover:bg-purple-800"
+              : "bg-gray-400 hover:bg-gray-500 text-black dark:bg-gray-500 dark:text-white dark:hover:bg-gray-600"
           }`}
           onClick={() => setSortBy("category")}
         >
