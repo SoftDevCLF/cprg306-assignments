@@ -39,7 +39,7 @@ export default function LandingPage() {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-5 text-center border border-gray-300 m-10 p-5 rounded-lg max-w-xs mx-auto dark:bg-gray-800 dark:border-gray-800">
+          <div className="grid grid-cols-1 gap-5 text-center border shadow-md border-gray-300 m-10 p-5 rounded-lg max-w-xs mx-auto dark:bg-gray-800 dark:border-gray-800">
             <p>
               Welcome, {user.displayName} ({user.email})
             </p>
