@@ -6,24 +6,16 @@ export default function ItemList({ items, onItemSelect }) {
   const [sortBy, setSortBy] = useState("name");
 
   const sortItems = [...items].sort((item1, item2) => {
-    if (sortBy === "name") {
-      if (item1.name < item2.name) {
-        return -1;
-      } else if (item1.name > item2.name) {
-        return 1;
-      } else {
+    switch (sortBy) {
+      case "name":
+        return item1.name.localeCompare(item2.name);
+
+      case "category":
+        return item1.category.localeCompare(item2.category);
+
+      default:
         return 0;
-      }
-    } else if (sortBy === "category") {
-      if (item1.category < item2.category) {
-        return -1;
-      } else if (item1.category > item2.category) {
-        return 1;
-      } else {
-        return 0;
-      }
     }
-    return 0;
   });
 
   return (
@@ -34,7 +26,7 @@ export default function ItemList({ items, onItemSelect }) {
           className={`px-3 py-1 rounded w-full text-white text-sm transition-colors ${
             sortBy === "name"
               ? "bg-blue-400 hover:bg-blue-600"
-              : "bg-green-400 hover:bg-green-600"
+              : "bg-gray-300 hover:bg-gray-400 text-black"
           }`}
           onClick={() => setSortBy("name")}
         >
@@ -44,7 +36,7 @@ export default function ItemList({ items, onItemSelect }) {
           className={`px-3 py-1 rounded w-full text-white text-sm transition-colors ${
             sortBy === "category"
               ? "bg-blue-400 hover:bg-blue-600"
-              : "bg-green-400 hover:bg-green-600"
+              : "bg-gray-300 hover:bg-gray-400 text-black"
           }`}
           onClick={() => setSortBy("category")}
         >
