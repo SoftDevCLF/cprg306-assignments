@@ -20,18 +20,18 @@ export default function LandingPage() {
     <main className="bg-gray-5 p-4 max-w-5xl mx-auto">
       <div className="text-center">
         {!user ? (
-          <div className="text-center border border-gray-300 m-10 p-5 rounded-lg max-w-xs mx-auto">
+          <div className="text-center border border-gray-300 m-10 p-5 rounded-lg max-w-xs mx-auto dark:bg-gray-800 dark:border-gray-800">
             <h1> Login with GitHub </h1>
-            <div className="">
+            <div>
               <Image
                 src="/github-mark.svg"
                 alt="GitHub Logo"
                 width={64}
                 height={64}
-                className="mx-auto mb-4 w-16 md:w-24 lg:w-32 h-auto m-5"
+                className="mx-auto mb-4 w-16 md:w-24 lg:w-32 h-auto m-5 dark:invert"
               />
               <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-5 rounded-full cursor-pointer w-full md:w-auto"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-5 rounded-full cursor-pointer w-full md:w-auto dark:bg-purple-600 dark:hover:bg-purple-800"
                 onClick={handleLogIn}
               >
                 Login
@@ -39,7 +39,7 @@ export default function LandingPage() {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-5 text-center border border-gray-300 m-10 p-5 rounded-lg max-w-xs mx-auto">
+          <div className="grid grid-cols-1 gap-5 text-center border border-gray-300 m-10 p-5 rounded-lg max-w-xs mx-auto dark:bg-gray-800 dark:border-gray-800">
             <p>
               Welcome, {user.displayName} ({user.email})
             </p>
@@ -50,7 +50,7 @@ export default function LandingPage() {
               Go to Shopping List
             </Link>
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-5 rounded-full cursor-pointer w-full md:w-auto"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-5 rounded cursor-pointer w-full md:w-auto dark:bg-purple-600 dark:hover:bg-purple-800"
               onClick={handleLogOut}
             >
               Logout
